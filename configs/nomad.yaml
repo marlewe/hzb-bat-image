@@ -22,6 +22,9 @@ plugins:
       nomad_north_jupyter.north_tools:jupyter:
         north_tool:
           image: ghcr.io/marlewe/hzb-bat-image/jupyter:main
+      nomad_north_voila.north_tools:voila:
+        north_tool:
+          image: ghcr.io/fairmat-nfdi/nomad-north-voila:v0.1.15
 
 meta:
   deployment: 'see NOMAD_META_DEPLOYMENT value in .env'
