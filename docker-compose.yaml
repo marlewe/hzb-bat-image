@@ -36,7 +36,7 @@ x-nomad-base: &nomad-base
   volumes:
     # Uncomment the following line to mount a local nomad.yaml into all NOMAD services:
     - ./configs/nomad.yaml:/app/nomad.yaml
-    - ./.volumes/fs:/app/.volumes/fs
+    - ${DOCKER_COMPOSE_FS_VOLUME}:/app/.volumes/fs
 
 # Base configuration for standard NOMAD services using the default nomad image (app and internal worker)
 x-nomad-service: &nomad-service
@@ -105,7 +105,7 @@ services:
       - MONGO_LOG_DIR=/dev/null
     volumes:
       - mongo:/data/db
-      - ./.volumes/mongo:/backup
+      - ${DOCKER_COMPOSE_MONGO_VOLUME}:/backup
     command: mongod --logpath=/dev/null # --quiet
     healthcheck:
       test:
