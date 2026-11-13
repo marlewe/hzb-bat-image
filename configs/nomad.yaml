@@ -32,7 +32,7 @@ plugins:
           image: ghcr.io/nomad-hzb/hzb-emil-image/jupyter:main
           path_prefix: voila/render
           with_path: true
-          mount_path: /home/jovyan
+          default_url: /voila/tree
           file_extensions:
             - ipynb
 
