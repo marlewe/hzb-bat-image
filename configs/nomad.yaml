@@ -33,6 +33,7 @@ plugins:
           path_prefix: voila/render
           with_path: true
           default_url: /voila/tree
+          mount_path: /home/jovyan
           file_extensions:
             - ipynb
 
