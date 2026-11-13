@@ -336,6 +336,11 @@ services:
       - 80:80
       - 443:443
 
+  voila-image:
+    image: ghcr.io/fairmat-nfdi/nomad-north-voila:v0.1.15
+    entrypoint: ["true"]
+    restart: "no"
+
 volumes:
   mongo:
     name: "nomad_oasis_mongo"
