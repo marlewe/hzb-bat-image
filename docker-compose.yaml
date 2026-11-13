@@ -336,8 +336,8 @@ services:
       - 80:80
       - 443:443
 
-  voila-image:
-    image: ghcr.io/fairmat-nfdi/nomad-north-voila:v0.1.15
+  jupyter-image:
+    image: ghcr.io/nomad-hzb/hzb-emil-image/jupyter:main
     entrypoint: ["true"]
     restart: "no"
 
