@@ -26,6 +26,8 @@ plugins:
         north_tool:
           image: ghcr.io/fairmat-nfdi/nomad-north-voila:v0.1.15
     include: [
+      "nomad_north_jupyter.north_tools:jupyter",
+      "nomad_north_voila.north_tools:voila",
       "nomad_battery_space.schema_packages:hzb_bs_package",
       "nomad_battery_space.schema_packages:hzb_bs_assembly_package",
       "nomad_battery_space.schema_packages:hzb_bs_measurement_package",
