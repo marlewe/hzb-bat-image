@@ -5,7 +5,7 @@
 # Reusable image definitions with environment variable overrides
 x-images:
   nomad:      &nomad-image      ${APP_IMAGE:-ghcr.io/marlewe/hzb-bat-image:${IMAGE_TAG:-main}}
-  jupyter:    &jupyter-image    ${JUPYTER_IMAGE:-ghcr.io/nomad-hzb/hzb-emil-image/jupyter:main}
+  jupyter:    &jupyter-image    ${JUPYTER_IMAGE:-ghcr.io/nomad-hzb/hzb-emil-image/jupyter:${IMAGE_TAG:-main}}
   cpu-worker: &cpu-worker-image ${NOMAD_CPU_WORKER_IMAGE:-ghcr.io/marlewe/hzb-bat-image/cpu-action:${IMAGE_TAG:-main}}
   gpu-worker: &gpu-worker-image ${NOMAD_GPU_WORKER_IMAGE:-ghcr.io/marlewe/hzb-bat-image/gpu-action:${IMAGE_TAG:-main}}
   north:      &north-image      ${NOMAD_NORTH_IMAGE:-ghcr.io/fairmat-nfdi/nomad-north:v2.0.0rc1}
@@ -273,7 +273,7 @@ services:
     environment:
       NOMAD_API_URL: "http://app:8000/backend/api/v1"
       BASE_URL: "/backend/north/"
-      OAUTH_CALLBACK_URL: "${NOMAD_META_DEPLOYMENT_URL}/backend/north/hub/oauth_callback"
+      OAUTH_CALLBACK_URL: "${NOMAD_HOSTNAME}/backend/north/hub/oauth_callback"
       DOCKER_PREFIX: "nomad-oasis-north"
       DOCKER_NETWORK: "nomad_oasis_network"
     env_file:
